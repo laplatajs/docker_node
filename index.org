@@ -142,6 +142,7 @@ docker run  -v <path_compartido>:<path_container> <Imagen> <proceso>
 - aldo.vizcaino87 [at] gmail [dot] com
 
 
+
 [fn:referencia_cafe_docker] https://www.flickr.com/photos/yukop/11941236015/
 [fn:historia] http://upload.wikimedia.org/wikipedia/commons/3/3a/1878_Adams_Monumental_Illustrated_Panorama_of_History_-_Geographicus_-_WorldHistory-adams-1871.jpg
 [fn:tecnovar] http://tecnoav.com/wp-content/uploads/2014/02/xenserver.jpg

@@ -9,12 +9,12 @@
 
 
 * Historia
-#+ATTR_HTML: :alt historia image :title Larga historia :align center :style height:350px;
+#+ATTR_HTML: :alt historia image :title Larga historia :align center
 [[./img/historia.jpg]]
 [fn:historia]
 
 ** [[http://www.everythingvm.com/content/history-virtualization][Virtualización]]
-#+ATTR_HTML: :alt virtualizacion image :title Virtualización :align left :style height:350px;
+#+ATTR_HTML: :alt virtualizacion image :title Virtualización :align left 
 [[./img/xenserver.jpg]]
 [fn:tecnovar]
 
@@ -40,7 +40,7 @@ and the introduction of a unified hierarchy.  -- [[http://en.wikipedia.org/wiki/
    
 * [[http://maciek.lasyk.info/sysop/2014/03/16/docker-vs-lxcansible/][LXC & Docker]]
 
-#+ATTR_HTML: :alt lxc & docker image :title lxc & docker :style width:400px;height:300px;
+#+ATTR_HTML: :alt lxc & docker image :title lxc & docker
 [[./img/lxc-docker.png]]
 [fn:lxc-docker]
 
@@ -52,7 +52,7 @@ Through a powerful API and simple tools, it lets Linux users easily create
 and manage system or application containers. -- [[https://linuxcontainers.org/][LXC]]
 #+END_QUOTE
 
-#+ATTR_HTML: :alt lxc image :title lxc arch :style width:400px;height:300px;
+#+ATTR_HTML: :alt lxc image :title lxc arch
 [[./img/lxc.png]]
 [fn:lxc]
 
@@ -62,7 +62,7 @@ An open platform for distributed applications for developers and
 sysadmins. -- [[https://www.docker.com/][Docker]]
 #+END_QUOTE
 
-#+ATTR_HTML: :alt cafe_docker image :title Docker cofee! :align center :style width:300px;height:300px
+#+ATTR_HTML: :alt cafe_docker image :title Docker cofee! :align center 
 [[./img/cafe_docker.jpg]]
 [fn:referencia_cafe_docker]
 
@@ -121,12 +121,26 @@ docker run  -v <path_compartido>:<path_container> <Imagen> <proceso>
 #+END_SRC
 
 * Nodejs
+[Demo]
 
 * Referencias
 - [[https://www.youtube.com/watch?v=XCVOxht34Hs][Be a happier developer with Docker: Tricks of the trade Nicola Paolucci (Atlassian)]]
 - [[https://www.youtube.com/watch?v=zdCOd_KThcI][¿Qué es Node.js? Ejemplo realtime]] - Ejemplo usado
 - [[https://www.youtube.com/watch?v=I4VkZ5H9PE8#t=7057][Sandboxing Node.js with CoreOS and Docker]]
-- [[ohttp://www.infoworld.com/article/2839284/application-virtualization/10-open-source-tools-to-make-docker-even-more-powerful.html][10 open source tools to make Docker even more powerful]]
+- [[http://www.infoworld.com/article/2839284/application-virtualization/10-open-source-tools-to-make-docker-even-more-powerful.html][10 open source tools to make Docker even more powerful]]
+
+
+* Preguntas?
+#+ATTR_HTML: :alt Preguntas? image :title Preguntas? :align center
+[[./img/Light-Pipes-Channel-Sunlight-Just-Like-Water-Pipes-Channel-Water-2.jpg]]
+
+
+* Hasta prontoo
+
+- Gracias!
+- Krahser_{Aldo María Vizcaino}
+- aldo.vizcaino87 [at] gmail [dot] com
+
 
 [fn:referencia_cafe_docker] https://www.flickr.com/photos/yukop/11941236015/
 [fn:historia] http://upload.wikimedia.org/wikipedia/commons/3/3a/1878_Adams_Monumental_Illustrated_Panorama_of_History_-_Geographicus_-_WorldHistory-adams-1871.jpg

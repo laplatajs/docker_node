@@ -26,8 +26,8 @@ p {
     display: inline-block;
 }
 
-#text-table-of-contents{
-    background: url(./img/docker-background.jpg);
-    background-repeat: no-repeat;
-    background-size: 100% 80%;
+
+#text-7 {
+    text-align:center;
+    font-size:3.5em;
 }

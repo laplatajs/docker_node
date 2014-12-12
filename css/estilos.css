@@ -22,13 +22,21 @@ p {
 }
 
 #postamble a {
-    margin-bottom: 20px;
     display: inline-block;
 }
 
-#text-table-of-contents{
-    background: url(./img/docker-background.jpg);
-    background-repeat: no-repeat;
-    background-size: 100% 80%;
+#postamble img {
+    width:300px;
+    height:200px;
 }
 
+
+#text-7{
+    font-size: 3.5em;
+}
+
+#text-7 ul {
+    list-style: none;
+    padding:0;
+    margin:0;
+}

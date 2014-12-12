@@ -95,7 +95,6 @@ debian              stable              802059b8f0ea        11 weeks ago        
 #+END_SRC
 
 
-
 ** Algunas experiencias
 - [[https://docs.docker.com/articles/networking/][Intranet]]
 #+BEGIN_SRC
@@ -122,18 +121,15 @@ docker run  -v <path_compartido>:<path_container> <Imagen> <proceso>
 
 * Nodejs
 [Demo]
-
 * Referencias
 - [[https://www.youtube.com/watch?v=XCVOxht34Hs][Be a happier developer with Docker: Tricks of the trade Nicola Paolucci (Atlassian)]]
 - [[https://www.youtube.com/watch?v=zdCOd_KThcI][¿Qué es Node.js? Ejemplo realtime]] - Ejemplo usado
 - [[https://www.youtube.com/watch?v=I4VkZ5H9PE8#t=7057][Sandboxing Node.js with CoreOS and Docker]]
 - [[http://www.infoworld.com/article/2839284/application-virtualization/10-open-source-tools-to-make-docker-even-more-powerful.html][10 open source tools to make Docker even more powerful]]
 
-
 * Preguntas?
 #+ATTR_HTML: :alt Preguntas? image :title Preguntas? :align center
 [[./img/Light-Pipes-Channel-Sunlight-Just-Like-Water-Pipes-Channel-Water-2.jpg]]
-
 
 * Hasta prontoo
 

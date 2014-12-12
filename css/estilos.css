@@ -1,0 +1,33 @@
+blockquote{
+    background-color: lightgrey;
+    position: relative;
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+}
+
+div.figure{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+p {
+    text-align: center;
+}
+#postamble {
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+}
+
+#postamble a {
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+#text-table-of-contents{
+    background: url(./img/docker-background.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 80%;
+}

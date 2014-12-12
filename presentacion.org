@@ -1,0 +1,137 @@
+#+TITLE: Docker y un sandbox Node.js
+#+AUTHOR: Krahser <Aldo Mar\iacute{}a Vizcaino>
+#+EMAIL: aldo.vizcaino87@gmail.com
+#+HTML_HEAD: <meta name="viewport" content="width=device-width, initial-scale=1">
+#+HTML_HEAD_EXTRA: <link href="css/estilos.css" rel="stylesheet" type="text/css">
+#+LANGUAGE: es
+#+OPTIONS: creator:nil num:nil toc:t \n:nil ::t |:t ^:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+INFOJS_OPT: view:info toc:t path:js/org-info.js tdepth:1 buttons: nil
+
+
+* Historia
+#+ATTR_HTML: :alt historia image :title Larga historia :align center :style height:350px;
+[[./img/historia.jpg]]
+[fn:historia]
+
+** [[http://www.everythingvm.com/content/history-virtualization][Virtualización]]
+#+ATTR_HTML: :alt virtualizacion image :title Virtualización :align left :style height:350px;
+[[./img/xenserver.jpg]]
+[fn:tecnovar]
+
+- Emulacion
+- Virtualizacion
+- [[https://www.kernel.org/doc/Documentation/cgroups/cgroups.txt][Linux cgroups]]
+- [[https://linuxcontainers.org/][LXC]]
+- Docker
+
+** cgroups
+#+BEGIN_QUOTE
+cgroups (a backronym for control groups) is a Linux kernel feature to
+limit, account, and isolate resource usage (CPU, memory, disk I/O,
+etc.) of process groups.
+This work was started by engineers at Google (primarily Paul Menage
+and Rohit Seth) in 2006 under the name "process containers". In late
+2007, it was renamed to "Control Groups" due to the confusion caused
+by multiple meanings of the term "container" in the Linux kernel, and
+merged into kernel version 2.6.24. Since then, many new features and
+controllers have been added, such as support for kernfs, firewalling,
+and the introduction of a unified hierarchy.  -- [[http://en.wikipedia.org/wiki/Cgroups][Wikipedia]]
+#+END_QUOTE
+   
+* [[http://maciek.lasyk.info/sysop/2014/03/16/docker-vs-lxcansible/][LXC & Docker]]
+
+#+ATTR_HTML: :alt lxc & docker image :title lxc & docker :style width:400px;height:300px;
+[[./img/lxc-docker.png]]
+[fn:lxc-docker]
+
+
+** LXC
+#+BEGIN_QUOTE
+LXC is a userspace interface for the Linux kernel containment features. 
+Through a powerful API and simple tools, it lets Linux users easily create 
+and manage system or application containers. -- [[https://linuxcontainers.org/][LXC]]
+#+END_QUOTE
+
+#+ATTR_HTML: :alt lxc image :title lxc arch :style width:400px;height:300px;
+[[./img/lxc.png]]
+[fn:lxc]
+
+** Docker
+#+BEGIN_QUOTE
+An open platform for distributed applications for developers and
+sysadmins. -- [[https://www.docker.com/][Docker]]
+#+END_QUOTE
+
+#+ATTR_HTML: :alt cafe_docker image :title Docker cofee! :align center :style width:300px;height:300px
+[[./img/cafe_docker.jpg]]
+[fn:referencia_cafe_docker]
+
+* Docker
+** Imagenes
+- Dockerfile
+
+#+INCLUDE: "./Docker/Dockerfile" src bash
+
+- [[https://registry.hub.docker.com/][Repositorio]]
+
+#+BEGIN_SRC bash
+docker pull dockerfile/nodejs
+#+END_SRC
+
+** Contenedores
+
+#+BEGIN_SRC 
+CONTAINER ID        IMAGE                      COMMAND             CREATED             STATUS                      PORTS      NAMES
+f26fc8e8cc87        dockerfile/nodejs:latest   "bash"              20 minutes ago      Up 20 minutes                          distracted_goodall
+6fcb80eb5da1        dockerfile/nodejs:latest   "node"              40 hours ago        Exited (143) 39 hours ago              cocky_heisenberg
+9c44e3678af4        dockerfile/nodejs:latest   "bash"              40 hours ago        Exited (0) 40 hours ago                insane_turing
+a59309ff89ec        krahser/ansible:latest     "/sbin/my_init"     10 days ago         Exited (-1) 47 hours ago               silly_tesla   
+                                                                                                                                                    
+REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+dockerfile/nodejs   latest              c45639f061da        3 days ago          496.3 MB
+krahser/ansible     latest              8d159d3a1aa3        5 weeks ago         325 MB
+phusion/baseimage   0.9.15              cf39b476aeec        10 weeks ago        289 MB
+debian              stable              802059b8f0ea        11 weeks ago        85.19 MB
+#+END_SRC
+
+
+
+** Algunas experiencias
+- [[https://docs.docker.com/articles/networking/][Intranet]]
+#+BEGIN_SRC
+#   -i, --interactive=false    Keep STDIN open even if not attached
+#   -h, --hostname=""          Container host name
+#   -t, --tty=false            Allocate a pseudo-TTY
+#   -P, --publish-all=false    Publish all exposed ports to the host interfaces
+#   -p, --publish=[]           Publish a container's port to the host
+                               format: ip:hostPort:containerPort | ip::containerPort | hostPort:containerPort | containerPort
+                               (use 'docker port' to see the actual mapping)
+
+docker run -i -t -p 127.0.0.1:7025:25 <Imagen> <proceso>
+#+END_SRC
+
+- Carpetas compartidas
+
+#+BEGIN_SRC 
+#   --name=""                  Assign a name to the container
+#   -v, --volume=[]            Bind mount a volume (e.g., from the host: -v /host:/container, from Docker: -v /container)
+#   --volumes-from=[]          Mount volumes from the specified container(s)
+
+docker run  -v <path_compartido>:<path_container> <Imagen> <proceso>
+#+END_SRC
+
+* Nodejs
+
+* Referencias
+- [[https://www.youtube.com/watch?v=XCVOxht34Hs][Be a happier developer with Docker: Tricks of the trade Nicola Paolucci (Atlassian)]]
+- [[https://www.youtube.com/watch?v=zdCOd_KThcI][¿Qué es Node.js? Ejemplo realtime]] - Ejemplo usado
+- [[https://www.youtube.com/watch?v=I4VkZ5H9PE8#t=7057][Sandboxing Node.js with CoreOS and Docker]]
+- [[ohttp://www.infoworld.com/article/2839284/application-virtualization/10-open-source-tools-to-make-docker-even-more-powerful.html][10 open source tools to make Docker even more powerful]]
+
+[fn:referencia_cafe_docker] https://www.flickr.com/photos/yukop/11941236015/
+[fn:historia] http://upload.wikimedia.org/wikipedia/commons/3/3a/1878_Adams_Monumental_Illustrated_Panorama_of_History_-_Geographicus_-_WorldHistory-adams-1871.jpg
+[fn:tecnovar] http://tecnoav.com/wp-content/uploads/2014/02/xenserver.jpg
+[fn:lxc-docker} http://www.infoq.com/resource/news/2014/03/docker_0_9/en/resources/1docker-execdriver-diagram.png
+[fn:lxc] http://i.stack.imgur.com/F837U.png
+[fn:docker-background] http://core0.staticworld.net/images/article/2014/09/docker-100432103-primary.idge.jpg
+[fn:dibujemos] https://github.com/buritica/dibujemos
